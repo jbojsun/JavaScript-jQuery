@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 배열객체 </title>
+<script>
+	var arr = [30, "따르릉", true]; //타입이 다른 배열 허용(자바스크립트만)
+    var arr2 = new Array();
+    var arr3 =  new Array(1,2,3,4,5);
+    arr[5] = "홍길동"; //배열 확장 가능(자바스크립트만)
+
+	document.write("<h3>배열값 가져오기-1(arr)</h3>");
+	document.write(arr[0], "<br>");
+	document.write(arr[1], "<br>");
+	document.write(arr[2], "<br>");//arr[3],arr[4]는 undefined,값을 안넣어서
+    document.write(arr[5], "<br>");
+
+	document.write("<h3>배열값 가져오기-2(arr)</h3>");
+	for(var i = 0; i < arr.length; i++){
+		document.write(arr[i], "<br>");
+	}
+
+	document.write("<h3>배열값 가져오기-3(arr)</h3>");
+	for(i in arr){ //배열의 제일 첫번째 요소를 i에 자동으로 넣음.
+		document.write(arr[i], "<br>");
+	}
+
+    document.write("<h3>배열값 가져오기-4(arr2)</h3>");
+	for(var i = 0; i < arr2.length; i++){
+		document.write(arr2[i], "<br>");
+	}
+    document.write("<h3>배열값 가져오기-5(arr2)</h3>");
+	for(i in arr2){ //배열의 제일 첫번째 요소를 i에 자동으로 넣음.
+		document.write(arr2[i], "<br>");
+	}
+
+    document.write("<h3>배열값 가져오기-6(arr3)</h3>");
+	for(var i = 0; i < arr3.length; i++){
+		document.write(arr3[i], "<br>");
+	}
+	document.write("<h3>배열값 가져오기-7(arr3)</h3>");
+	for(i in arr3){ //배열의 제일 첫번째 요소를 i에 자동으로 넣음.
+		document.write(arr3[i], "<br>");
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
