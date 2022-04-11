@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function( ){
+		var w1 = $("#p1").height();
+		//선택한 요소 집합의 첫번째 요소의 너비를 반환하거나,
+		//선택된 요소의 너비를 인수로 전달받은 값으로 설정.
+		console.log(w1);
+
+		var w2 = $("#p1").innerHeight();
+		console.log(w2);
+		////선택한 요소 집합의 첫 번째 요소의 높이에
+		//패딩 영역을 포함한 높이를 반환한다.
+
+		var w3 = $("#p1").outerHeight();
+		console.log(w3);
+		//선택한 요소 집합의 첫번째 요소의 너비에 패딩영역과
+		//테두리를 포함한 너비를 반환한다.
+		//또는 인수로 true를 전달 받으면 마진 영역까지 포함한 너비를 반환.
+
+		$("#p2")
+		.outerWidth(100)
+		.outerHeight(100);
+	});
+</script>
+<style>
+	*{padding: 0;}
+	#p1, #p2{
+		width: 100px;
+		height: 50px;
+		padding:20px;
+		border: 5px solid #000;
+		background-color: #ff0;
+	}
+</style>
+</head>
+<body>
+	<h1>수치 조작 메서드</h1>
+	<p id="p1">내용1</p>
+	<p id="p2">내용2</p>
+</body>
+</html>

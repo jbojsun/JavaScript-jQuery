@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		var idxNum = $("li").index($("#list3"));
+		//인수가 전달되지 않으면 반환 값은 형제 요소를 기준으로 jQuery개체 내에서 첫번째 요소의 위치를 나타내는 정수를 반환
+		//index(selector) 
+		//선택자가 인수로 전달되면 선택자와 일치하는 요소를 기준으로 jQuery 객체 내 첫번째 요소의 위치를 나타내는 정수를 반환
+		//index(element or jQuery)
+		//제이쿼리 객체 내의 돔요소 또는 첫번째 요소
+		//인수에 DOM Element 또는 jQuery를 개체가 인수로 전달되면,
+		// index() 원래의 컬렉션에 전달요소의 위치를 나타내는 정수를 반환
+
+		//해당요소를 찾을수 없는 경우 .index()는 -1을 반환
+		console.log(idxNum);
+	});
+</script>
+</head>
+<body>
+	<h1>배열 관련 메서드</h1>
+	<ul>
+		<li>내용1</li>
+		<li>내용2</li>
+		<li id="list3">내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+</html>
