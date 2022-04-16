@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	$("#btn1")
+	.data({"text":"javascript"}) 
+	// 키값을 불러오면 데이트를 가져온다.
+	.on({
+		"mouseover": overFnc, // .data의 키값으로 불러온 javascript를 출력
+		"mouseout": outFnc 
+	});
+
+	$("#btn2")
+	.data({"text":"welcome!"})
+	.on({
+		"mouseover focus": overFnc, //.data의 키값으로 welcome!을 출력
+		"mouseout blur": outFnc
+	});
+
+	function overFnc() {
+		$(".txt").text($(this).data("text"));
+	}
+	function outFnc() {
+		$(".txt").text("");
+	}
+});
+</script>
+</head>
+<body>
+	<p><button id="btn1">버튼1</button></p>
+	<p><button id="btn2">버튼2</button></p>
+	<p class="txt">123</p>
+</body>
+</html>

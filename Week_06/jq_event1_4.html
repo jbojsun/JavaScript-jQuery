@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function( ) {
+	$(document).ready(function(){ //HTML 문서가 로드되고, DOM이 준비되면 실행
+		var h1 = $(".img1").height(); //img1의 높이
+		console.log("ready :", h1);  //h1값을 콘솔로그에 출력
+	}); 
+
+	$(window).load(function(){ //모든 프레임, 객체, 이미지를 포함하여 전체 페이지가 완전히 로드되면 실행 
+		var h2 = $(".img1").height(); //img1의 높이
+		console.log("load :", h2); //h2값을 콘솔로그에 출력
+	});   
+});
+</script>
+</head>
+<body>
+	<p>
+		<img src="http://place-hold.it/300X300" class="img1">
+	</p>
+</body>
+</html>

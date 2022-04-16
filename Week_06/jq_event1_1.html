@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function( ) {
+	$(".btn1").click(function(){
+		$(".btn1").parent().next()
+		.css({"color":"#f00"});
+	}); //버튼 클릭시 btn1의 부모의 다음을 css값으로 변경
+
+	$(".btn2").on({
+		"mouseover focus": function() {
+			$(".btn2").parent().next()
+			.css({"color":"#0f0"});
+		}, //버튼 마우스 오버 포커스시 btn2의 부모의 다음을 css값으로 변경
+		"mouseout blur": function() {
+			$(".btn2").parent().next()
+			.css({"color":"#000"});
+		}, //버튼에서 마우스 아웃시 btn2의 부모의 다음 요소를 css값으로 변경
+	});   
+});
+</script>
+</head>
+<body>
+	<p>
+	<button class="btn1">버튼1</button>
+	</p>
+	<p>내용1</p>
+	<p>
+		<button class="btn2">버튼2</button>
+	</p>
+	<p>내용2</p>
+</body>
+</html>

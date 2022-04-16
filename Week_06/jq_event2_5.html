@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	$(".menuWrap_1 a").on("click", function(e) {
+		e.preventDefault();
+
+		$(".menuWrap_1 a")//다른 태그를 클릭시
+		.css({"background-color":"#fff"});
+
+		$(this)//태그를 클릭시
+		.css({"background-color":"#ff0"});
+		//.menuWrap_1 a클래스를 클릭시 이벤트 발생
+	});
+
+	$(".menuWrap_2 a").on("click", function(e) {
+		e.preventDefault();
+
+		$(".menuWrap_2 a")
+		.css({"background-color":"#fff"});
+
+		var idx = $(".menuWrap_2 a").index(this);
+		//index값을 idx 변수에 저장
+		$(".menuWrap_2 a").eq(idx)
+		.css({"background-color":"#0ff"});
+		
+		$(".idxNum").text(idx);
+		//.menuWrap_2 a태그를 클릭시 .idxNum 클래스에 인덱스값 출력
+	});
+});
+</script>
+</head>
+<body>
+<h2>$(this)</h2>
+<ul class="menuWrap_1">
+				<li><a href="#">메뉴1</a></li>
+				<li><a href="#">메뉴2</a></li>
+				<li><a href="#">메뉴3</a></li>
+</ul>
+<h2>Index( )</h2>   
+<ul class="menuWrap_2">
+				<li><a href="#">메뉴4</a></li>
+				<li><a href="#">메뉴5</a></li>
+				<li><a href="#">메뉴6</a></li>
+</ul>
+<p class="idxNum"></p>
+</body>
+</html>

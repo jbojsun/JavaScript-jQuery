@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function( ) {
+	$(".btn1").on({
+		"mouseover" : function( ) { //선택자로 지정한 요소와 그 요소의 자식 요소에서의 마우스 움직임을 모두 감지
+			$(".txt1")
+			.css({"background-color":"yellow"});
+		},
+		"mouseout" : function( ) {//선택자로 지정한 요소와 그 요소의 자식 요소에서의 마우스 움직임을 모두 감지
+			$(".txt1")
+			.css({"background":"none"});
+		}
+	});
+
+	$(".btn2").hover(function( ) { //최초 1회만 실행되고, 마우스가 요소 밖으로 나와도 이전 속성으로 돌아가지 않는다.
+		//css의 hover와 다른점
+		//css는 처음에 지정했던 속성으로 돌아가지만
+		//jQuery의 hover는 처음 지정한 속성과 다른 속성으로 변경하여 지정이 가능하다.
+		$(".txt2")
+		.css({"background-color":"aqua"});
+	}, function(){
+		$(".txt2")
+		.css({"background":"none"});
+		//콜백함수까지 작성해주어야 마우스가 요소밖으로 나왔을때의 효과도 줄 수 있다.
+		// * 콜백함수: 한 함수가 실행되고 난 후에 , 실행하고 싶은 또 다른 명령을 삽입할때 사용하는 함수
+	});
+});
+</script>
+</head>
+<body>
+	<p><button class="btn1">Mouse Over/Mouse Out</button></p>
+	<p class="txt1">내용1</p>
+	<p><button class="btn2">Hover</button></p>
+	<p class="txt2">내용2</p>
+</body>
+</html>
