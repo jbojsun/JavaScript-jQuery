@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    let i = 0,
+        a = [
+            "https://img.huffingtonpost.com/asset/5dd5f293250000ab11d2dbc4.jpeg?cache=A1ADNLUVMY&ops=scalefit_630_noupscale",
+            "https://img.huffingtonpost.com/asset/5dd5f5de1f00005211def05e.jpeg?ops=scalefit_630_noupscale",
+            "https://i.pinimg.com/736x/34/5c/df/345cdf0b5c4b2e6324f731b7b161698b.jpg"
+        ];
+
+    setInterval(() => {
+            $('img').fadeOut('slow',function(){
+                if(i == a.length-1) return 0;
+                else i+=1;
+
+                let values = (i == a.length-1);
+                console.log(values);
+
+                // i = (i == a.length -1) ? 0 : i +=1;
+                $(this).attr('src', a[i]).fadeIn('slow');
+            });
+    }, 3000);
+
+    // $(function(){
+    //         $("#flip").click(function(){
+    //         let imgtag = $(this).next();
+    //         imgtag.slideToggle('flow',function(){
+                
+    //             if($(this).css('display') != 'block'){
+    //                 i = (i == a.length -1) ? 0 : i +=1;
+    //                 $(this).children().attr('src', a[i]);
+    //             }
+    //         });
+    //     });
+    // });
+    
+</script>
+<style> 
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+</head>
+<body>
+ 
+<img src="https://img.huffingtonpost.com/asset/5dd5f293250000ab11d2dbc4.jpeg?cache=A1ADNLUVMY&ops=scalefit_630_noupscale" alt="images" />
+
+
+</body>
+</html>
